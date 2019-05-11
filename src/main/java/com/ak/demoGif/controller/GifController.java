@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class GifController {
 
@@ -20,6 +23,26 @@ public class GifController {
 
        return gifRepository.getGifNames();
     }
+
+    @RequestMapping("/")
+    @ResponseBody
+    public String listGif(){
+
+        // 1.Wyciąganie gifów
+        List<Gif> gifList = gifRepository.getGifs();
+     //   GifRepository gifRepository = new GifRepository();
+
+
+        // 2. Przekazywanie gifa do view
+
+        // 3. Zwracanie widoku
+
+        return gifRepository.getGifs().toString();
+
+    }
+
+
+
 
 
 }

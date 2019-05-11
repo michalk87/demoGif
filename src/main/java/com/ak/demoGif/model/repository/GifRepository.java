@@ -20,6 +20,10 @@ public class GifRepository {
 
     );
 
+    public List<Gif> getGifs(){
+        return ALL_GIFS;
+    }
+
     public String getGifNames(){
         String result = "";
         for (Gif allGif : ALL_GIFS){
