@@ -19,4 +19,7 @@ public class CategoryRepository {
     public List<Category> getAllCategories(){
         return ALL_CATEGORIES;
     }
+    public Category getCategoryById(int id){
+        return ALL_CATEGORIES.get(id);
+    }
 }
