@@ -55,28 +55,14 @@ public class GifRepository {
         }
         return categories;
     }
-}
 
-
-
-// moje
-    /*
-    private static List<Gif> FAVOURITE_GIFS = Arrays.asList(
-            new Gif("android-explosion", "mols",true),
-            new Gif("ben-and-mike", "mika",true));
-
-    public List<Gif> FavouriteGifs() {
-        return FAVOURITE_GIFS;
-    }
-
-    public void getGifNamesFavourite() {
-        String result = "";
-        for (Gif favourite : FavouriteGifs()) {
-            result += favourite.getName();
+    public Gif getGifByName(String name){
+        for (Gif gif : ALL_GIFS){
+            if (name.equals(gif.getName())){
+                return gif;
+            }
         }
+
+        return null;
     }
-    */
-
-
-
-
+}
