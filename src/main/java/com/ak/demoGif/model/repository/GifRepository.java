@@ -3,6 +3,7 @@ package com.ak.demoGif.model.repository;
 import com.ak.demoGif.model.Gif;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,36 +12,61 @@ public class GifRepository {
 
 
     private static List<Gif> ALL_GIFS = Arrays.asList(
-            new Gif("android-explosions", "mols",true),
-            new Gif("ben-and-mike", "mika",true),
-            new Gif("book-dominos", "mem",true),
-            new Gif("compiler-bot", "bot",true),
-            new Gif("cowboy-coder", "code",true),
-            new Gif("infinite-andrew", "andrew",true)
+            new Gif("android-explosion", "mols", true),
+            new Gif("ben-and-mike", "mika", true),
+            new Gif("book-dominos", "mem", true),
+            new Gif("compiler-bot", "bot", true),
+            new Gif("cowboy-coder", "code", true),
+            new Gif("infinite-andrew", "andrew", true)
 
     );
 
-    public List<Gif> getGifs(){
+    public List<Gif> getGifs() {
         return ALL_GIFS;
     }
 
-    public String getGifNames(){
+    public String getGifNames() {
         String result = "";
-        for (Gif allGif : ALL_GIFS){
+        for (Gif allGif : ALL_GIFS) {
             result += allGif.getName();
 
         }
-           return  result;
+        return result;
     }
 
+    public List<Gif> getFavoritesGifs() {
+        List<Gif> favoriteGifs = new ArrayList<>();
+        for (Gif gif : ALL_GIFS) {
+            if (gif.isFavorite()) {
+                favoriteGifs.add(gif);
+            }
+            return favoriteGifs;
+        }
 
-   /*
-    public void printGifs (Gif List){
+        return favoriteGifs;
+    }
+}
 
-        for (Gif Gifs: ALL_GIFS ) {
-            System.out.println(Gifs);
 
+
+// moje
+    /*
+    private static List<Gif> FAVOURITE_GIFS = Arrays.asList(
+            new Gif("android-explosion", "mols",true),
+            new Gif("ben-and-mike", "mika",true));
+
+    public List<Gif> FavouriteGifs() {
+        return FAVOURITE_GIFS;
+    }
+
+    public void getGifNamesFavourite() {
+        String result = "";
+        for (Gif favourite : FavouriteGifs()) {
+            result += favourite.getName();
         }
     }
-*/
-}
+    */
+
+
+
+
